@@ -3,7 +3,7 @@ name: Node CI
 on: [push]
 
 jobs:
-  build_and_test:
+  scrape:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -11,7 +11,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-          npm run
+          node index.js
       - name: Archive output
         uses: actions/upload-artifact@v2
         with:
