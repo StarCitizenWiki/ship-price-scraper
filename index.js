@@ -30,7 +30,7 @@ const scrape = async (page, tuple) => {
     price: sortedPrice[0],
   }
 
-  console.log(result)
+  console.log(`${result},`)
 
   prices.push(result)
 }
@@ -54,9 +54,11 @@ const scrape = async (page, tuple) => {
     })
   })
 
+  console.log('[')
   for (const link of links) {
     await scrape(page, link)
   }
+  console.log(']')
 
   prices.sort((a, b) => {
     return a.name.localeCompare(b.name)
