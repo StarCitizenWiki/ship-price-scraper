@@ -30,7 +30,7 @@ const scrape = async (page, tuple) => {
     price: sortedPrice[0],
   }
 
-  console.log(`${result},`)
+  console.log(`${JSON.stringify(result)},`)
 
   prices.push(result)
 }
